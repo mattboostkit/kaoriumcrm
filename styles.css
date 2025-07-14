@@ -721,6 +721,141 @@ body {
     color: var(--text-muted);
 }
 
+/* MVP Roadmap */
+.mvp-roadmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.mvp-phase {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.mvp-phase:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+
+.mvp-phase h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.mvp-phase ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mvp-phase li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-muted);
+}
+
+.mvp-phase li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+}
+
+.phase-cost {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Tech Stack Section */
+.tech-stack-section {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.tech-stack-section h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.tech-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tech-category {
+    background: var(--surface);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.tech-category h4 {
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.tech-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.tech-item strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.tech-item span {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.tech-benefits {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+}
+
+.tech-benefits h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.tech-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-benefits li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.tech-benefits li:last-child {
+    border-bottom: none;
+}
+
 /* Next Steps */
 .steps-timeline {
     display: grid;

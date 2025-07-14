@@ -67,15 +67,15 @@ function updateCalculator() {
     
     // Custom solution scaling
     if (numClients <= 10) {
-        customMonthlyCost = 100;
+        customMonthlyCost = 56;
     } else if (numClients <= 50) {
-        customMonthlyCost = 325;
+        customMonthlyCost = 150;
     } else if (numClients <= 100) {
-        customMonthlyCost = 500;
+        customMonthlyCost = 250;
     } else if (numClients <= 300) {
-        customMonthlyCost = 800;
+        customMonthlyCost = 500;
     } else {
-        customMonthlyCost = 1300;
+        customMonthlyCost = 800;
     }
     
     // GHL scales with users (estimate)
@@ -94,10 +94,10 @@ function updateCalculator() {
     
     // 3-Year totals
     const ghlSetup = 26000;
-    const customSetup = 105000;
+    const customSetup = 35000;
     
     const ghl3Year = ghlSetup + (ghlMonthlyCost * 36);
-    const custom3Year = customSetup + (customMonthlyCost * 36) + 50000; // Including maintenance
+    const custom3Year = customSetup + (customMonthlyCost * 36) + 15000; // Including maintenance
     
     document.getElementById('ghlTotal').textContent = `£${ghl3Year.toLocaleString()}`;
     document.getElementById('customTotal').textContent = `£${custom3Year.toLocaleString()}`;
