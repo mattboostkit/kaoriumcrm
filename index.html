@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaorium CRM Implementation - Statement of Work</title>
+    <title>Kaorium CRM MVP - Statement of Work</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,16 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <h1>Kaorium CRM SOW</h1>
+                <h1>Kaorium CRM MVP</h1>
                 <span class="version">v1.0</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#summary" class="nav-link">Summary</a></li>
-                <li><a href="#background" class="nav-link">Background</a></li>
-                <li><a href="#options" class="nav-link">Options</a></li>
-                <li><a href="#comparison" class="nav-link">Comparison</a></li>
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#requirements" class="nav-link">Requirements</a></li>
+                <li><a href="#approach" class="nav-link">Approach</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#timeline" class="nav-link">Timeline</a></li>
                 <li><a href="#investment" class="nav-link">Investment</a></li>
-                <li><a href="#recommendation" class="nav-link">Recommendation</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle">
                 <span class="bar"></span>
@@ -34,736 +34,487 @@
 
     <header class="hero">
         <div class="hero-content">
-            <h1>Statement of Work</h1>
-            <h2>Kaorium CRM Implementation Project</h2>
+            <h1>Simple CRM for KAORIUM</h1>
+            <h2>MVP Development - Statement of Work</h2>
             <div class="hero-meta">
                 <span>Client: Kaorium Ltd.</span>
+                <span>Prepared by: Boostkit</span>
                 <span>Date: 14 July 2025</span>
             </div>
         </div>
     </header>
 
     <main class="main-content">
-        <section id="summary" class="section">
+        <section id="overview" class="section">
             <div class="container">
-                <h2 class="section-title">Executive Summary</h2>
-                <div class="summary-content">
-                    <p class="lead">This Statement of Work outlines two implementation approaches for Kaorium's white-label CRM solution designed specifically for the fragrance industry. As "The Scent Sommelier" expanding from 400+ successful deployments in Japan to the UK and European markets, Kaorium requires a sophisticated CRM system that can manage B2B relationships with fragrance retailers while capturing and analysing consumer scent preference data.</p>
-                    
-                    <div class="options-grid">
-                        <div class="option-card" data-option="ghl">
-                            <h3>Option 1: Go High Level</h3>
-                            <div class="option-features">
-                                <div class="feature">
-                                    <span class="label">Timeline:</span>
-                                    <span class="value">6-12 weeks</span>
-                                </div>
-                                <div class="feature">
-                                    <span class="label">Initial Investment:</span>
-                                    <span class="value">Minimal setup costs</span>
-                                </div>
-                                <div class="feature">
-                                    <span class="label">Monthly Cost:</span>
-                                    <span class="value">£396+</span>
-                                </div>
-                                <div class="feature">
-                                    <span class="label">Time to Market:</span>
-                                    <span class="value">Fast</span>
-                                </div>
-                                <div class="feature">
-                                    <span class="label">Customisation:</span>
-                                    <span class="value">Limited to platform</span>
-                                </div>
+                <h2 class="section-title">Project Overview</h2>
+                
+                <div class="overview-content">
+                    <div class="context-box">
+                        <h3>Background</h3>
+                        <p>KAORIUM operates AI-powered fragrance discovery consoles across 400+ retail locations in Japan. As they expand to the UK market, they need a simple CRM to manage customer data captured during fragrance experiences and enable targeted email marketing based on scent preferences.</p>
+                        
+                        <div class="key-facts">
+                            <div class="fact">
+                                <span class="fact-label">Current Deployments</span>
+                                <span class="fact-value">400+ locations in Japan</span>
+                            </div>
+                            <div class="fact">
+                                <span class="fact-label">Data Location</span>
+                                <span class="fact-value">Japanese server (GDPR compliant)</span>
+                            </div>
+                            <div class="fact">
+                                <span class="fact-label">MVP Timeline</span>
+                                <span class="fact-value">6-8 weeks</span>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="objectives-box">
+                        <h3>MVP Objectives</h3>
+                        <ul class="objectives-list">
+                            <li>Enable multi-tenant authentication for retail partners</li>
+                            <li>Integrate with Japanese server for customer data</li>
+                            <li>Provide segmentation by date, fragrance preferences, and descriptive words</li>
+                            <li>Create simple email interface with scheduling capabilities</li>
+                            <li>Ensure GDPR compliance and data security</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="requirements" class="section">
+            <div class="container">
+                <h2 class="section-title">MVP Functional Requirements</h2>
+                
+                <div class="requirements-grid">
+                    <div class="requirement-card priority">
+                        <div class="req-number">0</div>
+                        <h3>Authentication System</h3>
+                        <ul>
+                            <li>Email and password authentication for each client</li>
+                            <li>Dedicated interface per authenticated client</li>
+                            <li>Secure multi-tenant data isolation</li>
+                            <li>Role-based access control</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <div class="req-number">1</div>
+                        <h3>Segmentation by Date/Period</h3>
+                        <ul>
+                            <li>Extract emails registered within specific date ranges</li>
+                            <li>Filter by interaction date and time</li>
+                            <li>Support for custom date range selection</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <div class="req-number">2</div>
+                        <h3>By 'Most Liked' Fragrance</h3>
+                        <ul>
+                            <li>Extract emails for users who selected a specific fragrance as most liked</li>
+                            <li>Filter by single fragrance selection</li>
+                            <li>Support for multiple fragrance queries</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <div class="req-number">3</div>
+                        <h3>By 'Liked' Fragrances</h3>
+                        <ul>
+                            <li>Extract emails for users who included a specific fragrance in their top 3</li>
+                            <li>Support for ANY or ALL matching logic</li>
+                            <li>Combine with other filters</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <div class="req-number">4</div>
+                        <h3>By Selected Words</h3>
+                        <ul>
+                            <li>Extract emails for users who selected specific descriptive words</li>
+                            <li>Filter by any of the 3 words per product</li>
+                            <li>Word frequency analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card priority">
+                        <div class="req-number">5</div>
+                        <h3>Email Interface</h3>
+                        <ul>
+                            <li>Email composition interface with rich text editor</li>
+                            <li>Clickable hyperlinks in message body</li>
+                            <li>Schedule sending time functionality</li>
+                            <li>Send to segmented lists from features 1-4</li>
+                            <li>Email preview before sending</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="data-requirements">
+                    <h3>Data Structure</h3>
+                    <div class="data-schema">
+                        <div class="data-field">
+                            <span class="field-name">interaction_date</span>
+                            <span class="field-type">DateTime</span>
+                            <span class="field-desc">Date and time of KAORIUM experience</span>
+                        </div>
+                        <div class="data-field">
+                            <span class="field-name">email</span>
+                            <span class="field-type">String</span>
+                            <span class="field-desc">User's email address</span>
+                        </div>
+                        <div class="data-field">
+                            <span class="field-name">liked_fragrances</span>
+                            <span class="field-type">Array[3]</span>
+                            <span class="field-desc">3 fragrances tapped as 'liked'</span>
+                        </div>
+                        <div class="data-field">
+                            <span class="field-name">most_liked_fragrance</span>
+                            <span class="field-type">String</span>
+                            <span class="field-desc">1 fragrance selected as 'most liked'</span>
+                        </div>
+                        <div class="data-field">
+                            <span class="field-name">descriptive_words</span>
+                            <span class="field-type">Array[9]</span>
+                            <span class="field-desc">3 words per fragrance (total 9)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="approach" class="section">
+            <div class="container">
+                <h2 class="section-title">Implementation Approach</h2>
+                
+                <div class="approach-options">
+                    <div class="option-comparison">
+                        <h3>We evaluated two approaches for your CRM:</h3>
                         
-                        <div class="option-card recommended" data-option="custom">
-                            <div class="recommended-badge">Recommended</div>
-                            <h3>Option 2: Custom Solution</h3>
-                            <div class="option-features">
-                                <div class="feature">
-                                    <span class="label">Timeline:</span>
-                                    <span class="value">6-9 months</span>
-                                </div>
-                                <div class="feature">
-                                    <span class="label">Initial Investment:</span>
-                                    <span class="value">£70,000-100,000</span>
-                                </div>
-                                <div class="feature">
-                                    <span class="label">Monthly Cost:</span>
-                                    <span class="value">£50-1,300</span>
-                                </div>
-                                <div class="feature">
-                                    <span class="label">Time to Market:</span>
-                                    <span class="value">Longer cycle</span>
-                                </div>
-                                <div class="feature">
-                                    <span class="label">Customisation:</span>
-                                    <span class="value">Unlimited flexibility</span>
-                                </div>
+                        <div class="options-table">
+                            <div class="option-header">
+                                <div></div>
+                                <div class="option-title ghl">Option 1: Go High Level</div>
+                                <div class="option-title custom recommended">Option 2: Custom Build (Recommended)</div>
+                            </div>
+                            
+                            <div class="comparison-row">
+                                <div class="row-label">Setup Time</div>
+                                <div class="row-value">4-6 weeks</div>
+                                <div class="row-value">6-8 weeks</div>
+                            </div>
+                            
+                            <div class="comparison-row">
+                                <div class="row-label">Initial Cost</div>
+                                <div class="row-value">£5,000</div>
+                                <div class="row-value">£15,000-20,000</div>
+                            </div>
+                            
+                            <div class="comparison-row">
+                                <div class="row-label">Monthly Cost</div>
+                                <div class="row-value">£400-600</div>
+                                <div class="row-value">£50-150</div>
+                            </div>
+                            
+                            <div class="comparison-row">
+                                <div class="row-label">Customisation</div>
+                                <div class="row-value warning">Limited to platform capabilities</div>
+                                <div class="row-value success">Fully customisable</div>
+                            </div>
+                            
+                            <div class="comparison-row">
+                                <div class="row-label">Japan Integration</div>
+                                <div class="row-value warning">Via API workarounds</div>
+                                <div class="row-value success">Native integration</div>
+                            </div>
+                            
+                            <div class="comparison-row">
+                                <div class="row-label">Fragrance Features</div>
+                                <div class="row-value warning">Basic implementation</div>
+                                <div class="row-value success">Purpose-built</div>
+                            </div>
+                            
+                            <div class="comparison-row">
+                                <div class="row-label">Long-term Cost (3yr)</div>
+                                <div class="row-value">£19,400-26,600</div>
+                                <div class="row-value success">£16,800-25,400</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="recommendation-box">
-                        <h3>Our Recommendation</h3>
-                        <p>Based on Kaorium's specific requirements for fragrance industry integration, white-label capabilities, and long-term scalability, we recommend the <strong>Custom Supabase/Next.js solution</strong>. While requiring higher initial investment, it provides superior flexibility for fragrance-specific features, better control over multi-tenant architecture, and significantly lower long-term operational costs at scale.</p>
+                        <h3>Our Recommendation: Custom Build</h3>
+                        <p>For KAORIUM's specific requirements - Japanese server integration, fragrance-based segmentation, and multi-tenant architecture - a custom solution provides better value and flexibility. The slightly longer development time is offset by significantly lower operational costs and perfect alignment with your unique needs.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="background" class="section">
+        <section id="architecture" class="section">
             <div class="container">
-                <h2 class="section-title">Project Background and Objectives</h2>
+                <h2 class="section-title">Technical Architecture</h2>
                 
-                <div class="subsection">
-                    <h3>Current State Analysis</h3>
-                    <p>Kaorium currently operates AI-powered fragrance discovery consoles across 400+ retail locations in Japan, achieving remarkable results including:</p>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-value">120%</div>
-                            <div class="stat-label">Sales Increase</div>
+                <div class="architecture-overview">
+                    <h3>System Design</h3>
+                    <div class="architecture-diagram">
+                        <div class="arch-layer">
+                            <h4>Frontend Layer</h4>
+                            <div class="tech-stack">
+                                <span>Next.js 14</span>
+                                <span>TypeScript</span>
+                                <span>Tailwind CSS</span>
+                                <span>React Hook Form</span>
+                            </div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-value">287%</div>
-                            <div class="stat-label">Conversion Rate Improvement</div>
+                        
+                        <div class="arch-layer">
+                            <h4>Authentication & API</h4>
+                            <div class="tech-stack">
+                                <span>Supabase Auth</span>
+                                <span>Row Level Security</span>
+                                <span>JWT Tokens</span>
+                                <span>Multi-tenant Isolation</span>
+                            </div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-value">400+</div>
-                            <div class="stat-label">Retail Locations</div>
+                        
+                        <div class="arch-layer">
+                            <h4>Data Layer</h4>
+                            <div class="tech-stack">
+                                <span>PostgreSQL (Supabase)</span>
+                                <span>Prisma ORM</span>
+                                <span>Japan DB Sync</span>
+                                <span>Redis Cache</span>
+                            </div>
+                        </div>
+                        
+                        <div class="arch-layer">
+                            <h4>Email Services</h4>
+                            <div class="tech-stack">
+                                <span>Resend API</span>
+                                <span>React Email Templates</span>
+                                <span>Scheduled Jobs</span>
+                                <span>Delivery Tracking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="integration-details">
+                        <h3>Japanese Server Integration</h3>
+                        <div class="integration-options">
+                            <div class="integration-option">
+                                <h4>Option A: API Integration (Recommended)</h4>
+                                <ul>
+                                    <li>REST API endpoint on Japan server</li>
+                                    <li>Scheduled data sync every 15 minutes</li>
+                                    <li>Webhook for real-time updates</li>
+                                    <li>Encrypted data transfer</li>
+                                </ul>
+                            </div>
+                            <div class="integration-option">
+                                <h4>Option B: Direct Database Connection</h4>
+                                <ul>
+                                    <li>Read-only database user</li>
+                                    <li>VPN tunnel for security</li>
+                                    <li>Real-time data access</li>
+                                    <li>Higher complexity</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="subsection">
-                    <h3>Business Objectives</h3>
-                    <div class="objectives-list">
-                        <div class="objective primary">
-                            <h4>Primary Goal</h4>
-                            <p>Develop a white-label CRM platform to manage B2B relationships with fragrance retailers</p>
+        <section id="timeline" class="section">
+            <div class="container">
+                <h2 class="section-title">Development Timeline</h2>
+                
+                <div class="timeline-overview">
+                    <div class="timeline-header">
+                        <h3>8-Week MVP Development Plan</h3>
+                        <p>Focused on delivering core functionality quickly while maintaining quality</p>
+                    </div>
+
+                    <div class="timeline-phases">
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <span class="phase-number">1</span>
+                                <h4>Foundation</h4>
+                                <span class="phase-duration">Weeks 1-2</span>
+                            </div>
+                            <ul class="phase-tasks">
+                                <li>Project setup and environment configuration</li>
+                                <li>Database schema design and implementation</li>
+                                <li>Multi-tenant authentication system</li>
+                                <li>Basic UI framework and routing</li>
+                                <li>Japan server integration planning</li>
+                            </ul>
                         </div>
-                        <div class="objective">
-                            <h4>Secondary Goals</h4>
-                            <ul>
-                                <li>Capture and analyze consumer scent preference data</li>
-                                <li>Enable retail partners to track performance metrics</li>
-                                <li>Support multi-market expansion with localised features</li>
-                                <li>Integrate with existing KAORIUM hardware and AI systems</li>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <span class="phase-number">2</span>
+                                <h4>Core Features</h4>
+                                <span class="phase-duration">Weeks 3-4</span>
+                            </div>
+                            <ul class="phase-tasks">
+                                <li>Segmentation engine (date, fragrance, words)</li>
+                                <li>Query builder interface</li>
+                                <li>Results preview and export</li>
+                                <li>Japan data sync implementation</li>
+                                <li>Basic analytics dashboard</li>
+                            </ul>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <span class="phase-number">3</span>
+                                <h4>Email System</h4>
+                                <span class="phase-duration">Weeks 5-6</span>
+                            </div>
+                            <ul class="phase-tasks">
+                                <li>Email composition interface</li>
+                                <li>Rich text editor integration</li>
+                                <li>Template management</li>
+                                <li>Scheduling system</li>
+                                <li>Resend API integration</li>
+                            </ul>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <span class="phase-number">4</span>
+                                <h4>Testing & Launch</h4>
+                                <span class="phase-duration">Weeks 7-8</span>
+                            </div>
+                            <ul class="phase-tasks">
+                                <li>End-to-end testing</li>
+                                <li>Security audit</li>
+                                <li>Performance optimisation</li>
+                                <li>Client training</li>
+                                <li>Production deployment</li>
                             </ul>
                         </div>
                     </div>
-                </div>
 
-                <div class="subsection">
-                    <h3>Success Metrics</h3>
-                    <div class="metrics-grid">
-                        <div class="metric-card">
-                            <div class="metric-icon">🏪</div>
-                            <div class="metric-value">500+</div>
-                            <div class="metric-label">Retail locations within 18 months</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-icon">⏱️</div>
-                            <div class="metric-value">95%</div>
-                            <div class="metric-label">System uptime</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-icon">⚡</div>
-                            <div class="metric-value">&lt;3s</div>
-                            <div class="metric-label">Page load times globally</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-icon">🔒</div>
-                            <div class="metric-value">100%</div>
-                            <div class="metric-label">GDPR compliance</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="options" class="section">
-            <div class="container">
-                <h2 class="section-title">Implementation Options</h2>
-                
-                <div class="option-details">
-                    <div class="option-detail" id="ghl-detail">
-                        <h3>Option 1: Go High Level Implementation</h3>
-                        
-                        <div class="architecture-diagram">
-                            <h4>Technical Architecture</h4>
-                            <div class="diagram">
-                                <div class="layer">
-                                    <div class="layer-title">GHL Cloud Platform</div>
-                                    <div class="layer-content">
-                                        <span>White-Label Interface</span>
-                                        <span>CRM Core Functions</span>
-                                        <span>Marketing Automation</span>
-                                        <span>API Gateway</span>
-                                    </div>
-                                </div>
-                                <div class="connection">↕ API Integration ↕</div>
-                                <div class="layer">
-                                    <div class="layer-title">Custom Integration Layer</div>
-                                    <div class="layer-content">
-                                        <span>KAORIUM Hardware Sync</span>
-                                        <span>Fragrance Data Processing</span>
-                                        <span>Custom Reporting</span>
-                                    </div>
-                                </div>
+                    <div class="milestones">
+                        <h3>Key Milestones</h3>
+                        <div class="milestone-list">
+                            <div class="milestone">
+                                <span class="milestone-date">Week 2</span>
+                                <span class="milestone-name">Authentication system complete</span>
                             </div>
-                        </div>
-
-                        <div class="timeline">
-                            <h4>Implementation Timeline</h4>
-                            <div class="timeline-phases">
-                                <div class="phase">
-                                    <div class="phase-header">
-                                        <span class="phase-title">Phase 1: Foundation</span>
-                                        <span class="phase-duration">Weeks 1-3</span>
-                                    </div>
-                                    <ul class="phase-tasks">
-                                        <li>GHL account setup and configuration</li>
-                                        <li>White-label branding implementation</li>
-                                        <li>Basic CRM structure creation</li>
-                                        <li>User roles and permissions setup</li>
-                                    </ul>
-                                </div>
-                                <div class="phase">
-                                    <div class="phase-header">
-                                        <span class="phase-title">Phase 2: Customisation</span>
-                                        <span class="phase-duration">Weeks 4-6</span>
-                                    </div>
-                                    <ul class="phase-tasks">
-                                        <li>Custom fields for fragrance data</li>
-                                        <li>Workflow automation design</li>
-                                        <li>Integration layer development</li>
-                                        <li>Report template creation</li>
-                                    </ul>
-                                </div>
-                                <div class="phase">
-                                    <div class="phase-header">
-                                        <span class="phase-title">Phase 3: Integration</span>
-                                        <span class="phase-duration">Weeks 7-9</span>
-                                    </div>
-                                    <ul class="phase-tasks">
-                                        <li>KAORIUM hardware API connection</li>
-                                        <li>Data import from existing systems</li>
-                                        <li>Integration testing</li>
-                                        <li>Testing and refinement</li>
-                                    </ul>
-                                </div>
-                                <div class="phase">
-                                    <div class="phase-header">
-                                        <span class="phase-title">Phase 4: Deployment</span>
-                                        <span class="phase-duration">Weeks 10-12</span>
-                                    </div>
-                                    <ul class="phase-tasks">
-                                        <li>Pilot deployment with select partners</li>
-                                        <li>Training and documentation</li>
-                                        <li>Performance optimisation</li>
-                                        <li>Full production launch</li>
-                                    </ul>
-                                </div>
+                            <div class="milestone">
+                                <span class="milestone-date">Week 4</span>
+                                <span class="milestone-name">Segmentation features functional</span>
                             </div>
-                        </div>
-
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h4>Advantages</h4>
-                                <ul>
-                                    <li>Rapid deployment timeline</li>
-                                    <li>Built-in marketing automation tools</li>
-                                    <li>Established platform stability</li>
-                                    <li>Regular feature updates from GHL</li>
-                                    <li>Lower initial investment</li>
-                                </ul>
+                            <div class="milestone">
+                                <span class="milestone-date">Week 6</span>
+                                <span class="milestone-name">Email system integrated</span>
                             </div>
-                            <div class="cons">
-                                <h4>Limitations</h4>
-                                <ul>
-                                    <li>USD-only pricing creates currency complexity</li>
-                                    <li>Limited customisation for fragrance-specific features</li>
-                                    <li>Higher long-term operational costs</li>
-                                    <li>Platform dependency and vendor lock-in</li>
-                                    <li>Basic e-commerce functionality</li>
-                                </ul>
+                            <div class="milestone">
+                                <span class="milestone-date">Week 8</span>
+                                <span class="milestone-name">MVP launched</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="option-detail" id="custom-detail">
-                        <h3>Option 2: Custom Supabase/Next.js Implementation</h3>
-                        
-                        <div class="architecture-diagram">
-                            <h4>Technical Architecture</h4>
-                            <div class="diagram">
-                                <div class="layer">
-                                    <div class="layer-title">Next.js Frontend</div>
-                                    <div class="layer-content">
-                                        <span>Server Components</span>
-                                        <span>shadcn/ui Components</span>
-                                        <span>Multi-tenant Routing</span>
-                                        <span>Real-time Updates</span>
-                                    </div>
-                                </div>
-                                <div class="connection">↕ API/WebSocket ↕</div>
-                                <div class="layer">
-                                    <div class="layer-title">Supabase Backend</div>
-                                    <div class="layer-content">
-                                        <span>PostgreSQL Database</span>
-                                        <span>Row Level Security</span>
-                                        <span>Edge Functions</span>
-                                        <span>File Storage</span>
-                                    </div>
-                                </div>
-                                <div class="connection">↕ Deployment ↕</div>
-                                <div class="layer">
-                                    <div class="layer-title">Vercel Global CDN</div>
-                                    <div class="layer-content">
-                                        <span>Edge Network</span>
-                                        <span>Serverless Functions</span>
-                                        <span>Custom Domains</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="white-label-architecture">
-                            <h4>White-Label & Multi-Tenant Architecture</h4>
-                            <div class="architecture-details">
-                                <div class="architecture-section">
-                                    <h5>Authentication & Access Control</h5>
-                                    <ul>
-                                        <li><strong>Email & Password Authentication:</strong> Each retail partner's users log in with email/password via Supabase Auth</li>
-                                        <li><strong>Tenant Isolation:</strong> Row-Level Security (RLS) ensures complete data separation between partners</li>
-                                        <li><strong>Custom Login Pages:</strong> Each partner gets their own branded login URL (e.g., partner1.kaoriumcrm.com)</li>
-                                        <li><strong>Role-Based Access:</strong> Admin, Manager, and User roles with granular permissions per tenant</li>
-                                    </ul>
-                                </div>
-                                <div class="architecture-section">
-                                    <h5>White-Label Capabilities</h5>
-                                    <ul>
-                                        <li><strong>Custom Domains:</strong> Each partner can use their own domain (e.g., crm.partner.com)</li>
-                                        <li><strong>Dynamic Theming:</strong> Logo, colours, fonts stored per tenant and applied at runtime</li>
-                                        <li><strong>Email Branding:</strong> Automated emails use partner's branding and from address</li>
-                                        <li><strong>Dedicated Dashboards:</strong> Each partner sees only their data and custom KPIs</li>
-                                    </ul>
-                                </div>
-                                <div class="architecture-section">
-                                    <h5>Selling to Other Companies</h5>
-                                    <ul>
-                                        <li><strong>SaaS Model:</strong> Monthly subscription per retail partner based on contacts/features</li>
-                                        <li><strong>Self-Service Onboarding:</strong> New partners can sign up and configure their instance</li>
-                                        <li><strong>Automated Provisioning:</strong> New tenant setup in minutes with default configuration</li>
-                                        <li><strong>Revenue Sharing:</strong> Optional model where partners pay based on campaign performance</li>
-                                    </ul>
-                                </div>
-                                <div class="architecture-section">
-                                    <h5>Technical Implementation</h5>
-                                    <div class="code-example">
-                                        <pre>// Tenant identification from subdomain
-const tenant = extractTenant(request.headers.host)
-
-// Supabase RLS policy example
-CREATE POLICY "tenant_isolation" ON contacts
-FOR ALL USING (tenant_id = current_setting('app.tenant_id'))
-
-// Dynamic theming
-const theme = await getThemeForTenant(tenantId)
-return &lt;ThemeProvider theme={theme}&gt;...&lt;/ThemeProvider&gt;</pre>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline">
-                            <h4>Implementation Timeline</h4>
-                            <div class="timeline-phases">
-                                <div class="phase">
-                                    <div class="phase-header">
-                                        <span class="phase-title">Phase 1: MVP Core (Weeks 1-4)</span>
-                                        <span class="phase-duration">4 weeks</span>
-                                    </div>
-                                    <ul class="phase-tasks">
-                                        <li>Multi-tenant authentication system</li>
-                                        <li>Database schema for fragrance preference data</li>
-                                        <li>Integration with Japanese server</li>
-                                        <li>Basic segmentation queries (date, fragrance, words)</li>
-                                        <li>Simple email composition interface</li>
-                                    </ul>
-                                </div>
-                                <div class="phase">
-                                    <div class="phase-header">
-                                        <span class="phase-title">Phase 2: Email & UI (Weeks 5-6)</span>
-                                        <span class="phase-duration">2 weeks</span>
-                                    </div>
-                                    <ul class="phase-tasks">
-                                        <li>Resend/Loops integration for email delivery</li>
-                                        <li>Email scheduling functionality</li>
-                                        <li>Client-specific UI customisation</li>
-                                        <li>Segmentation results preview</li>
-                                        <li>Basic activity logging</li>
-                                    </ul>
-                                </div>
-                                <div class="phase">
-                                    <div class="phase-header">
-                                        <span class="phase-title">Phase 3: Testing & Launch (Weeks 7-8)</span>
-                                        <span class="phase-duration">2 weeks</span>
-                                    </div>
-                                    <ul class="phase-tasks">
-                                        <li>Integration testing with Japan server</li>
-                                        <li>Multi-tenant security testing</li>
-                                        <li>Email delivery testing</li>
-                                        <li>Client training and documentation</li>
-                                        <li>Production deployment</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h4>Advantages</h4>
-                                <ul>
-                                    <li>Complete customisation flexibility</li>
-                                    <li>Fragrance industry-specific features</li>
-                                    <li>Significantly lower operational costs at scale</li>
-                                    <li>Full ownership and control</li>
-                                    <li>Native GBP pricing and localization</li>
-                                    <li>Superior performance with global CDN</li>
-                                    <li>Modern tech stack with excellent developer experience</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h4>Considerations</h4>
-                                <ul>
-                                    <li>Longer initial development timeline</li>
-                                    <li>Higher upfront investment</li>
-                                    <li>Requires dedicated development team</li>
-                                    <li>Ongoing maintenance responsibility</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="comparison" class="section">
-            <div class="container">
-                <h2 class="section-title">Detailed Feature Comparison</h2>
-                
-                <div class="comparison-table-wrapper">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Feature Category</th>
-                                <th>Go High Level</th>
-                                <th>Custom Solution</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Core CRM</td>
-                                <td><span class="status good">✓ Comprehensive</span></td>
-                                <td><span class="status good">✓ Fully customisable</span></td>
-                            </tr>
-                            <tr>
-                                <td>Fragrance Features</td>
-                                <td><span class="status warning">⚠ Basic customisation</span></td>
-                                <td><span class="status good">✓ Purpose-built</span></td>
-                            </tr>
-                            <tr>
-                                <td>White-Label</td>
-                                <td><span class="status good">✓ Built-in</span></td>
-                                <td><span class="status good">✓ Advanced options</span></td>
-                            </tr>
-                            <tr>
-                                <td>Scalability</td>
-                                <td><span class="status warning">⚠ Cost increases</span></td>
-                                <td><span class="status good">✓ Efficient scaling</span></td>
-                            </tr>
-                            <tr>
-                                <td>Integration Flexibility</td>
-                                <td><span class="status warning">⚠ API limitations</span></td>
-                                <td><span class="status good">✓ Unlimited</span></td>
-                            </tr>
-                            <tr>
-                                <td>Multi-currency</td>
-                                <td><span class="status bad">✗ USD only</span></td>
-                                <td><span class="status good">✓ Native support</span></td>
-                            </tr>
-                            <tr>
-                                <td>Performance</td>
-                                <td><span class="status good">✓ Good</span></td>
-                                <td><span class="status good">✓ Excellent</span></td>
-                            </tr>
-                            <tr>
-                                <td>Customisation</td>
-                                <td><span class="status warning">⚠ Platform limits</span></td>
-                                <td><span class="status good">✓ Unlimited</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </section>
 
         <section id="investment" class="section">
             <div class="container">
-                <h2 class="section-title">Investment Analysis</h2>
+                <h2 class="section-title">Investment & Ongoing Costs</h2>
                 
-                <div class="cost-comparison">
-                    <div class="cost-option">
-                        <h3>Option 1: Go High Level Costs (GBP)</h3>
-                        
-                        <div class="cost-section">
-                            <h4>Setup & Implementation</h4>
-                            <div class="cost-items">
-                                <div class="cost-item">
-                                    <span>Professional Services</span>
-                                    <span>£2,000</span>
-                                </div>
-                                <div class="cost-item">
-                                    <span>Basic Setup & Configuration</span>
-                                    <span>£2,000</span>
-                                </div>
-                                <div class="cost-item">
-                                    <span>Training & Documentation</span>
-                                    <span>£1,000</span>
-                                </div>
-                                <div class="cost-item total">
-                                    <span>Total Setup</span>
-                                    <span>£5,000</span>
-                                </div>
+                <div class="investment-breakdown">
+                    <div class="cost-section">
+                        <h3>MVP Development Investment</h3>
+                        <div class="cost-breakdown">
+                            <div class="cost-item">
+                                <span class="cost-label">Foundation & Setup</span>
+                                <span class="cost-value">£4,000</span>
                             </div>
-                        </div>
-                        
-                        <div class="cost-section">
-                            <h4>Monthly Operational Costs</h4>
-                            <div class="cost-items">
-                                <div class="cost-item">
-                                    <span>Agency Pro License</span>
-                                    <span>£396/month</span>
-                                </div>
-                                <div class="cost-item">
-                                    <span>Additional User Licenses</span>
-                                    <span>£40/user/month</span>
-                                </div>
-                                <div class="cost-item">
-                                    <span>SMS/Email Credits</span>
-                                    <span>£200-500/month</span>
-                                </div>
-                                <div class="cost-item">
-                                    <span>Custom Domain/SSL</span>
-                                    <span>£20/month</span>
-                                </div>
-                                <div class="cost-item">
-                                    <span>Support & Maintenance</span>
-                                    <span>£500/month</span>
-                                </div>
-                                <div class="cost-item total">
-                                    <span>Total Monthly</span>
-                                    <span>£1,156-1,416+</span>
-                                </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Core Features Development</span>
+                                <span class="cost-value">£6,000</span>
                             </div>
-                        </div>
-                        
-                        <div class="cost-section">
-                            <h4>3-Year Total Cost of Ownership</h4>
-                            <div class="tco-summary">
-                                <div class="tco-item">
-                                    <span>Year 1</span>
-                                    <span>£30,872-42,992</span>
-                                </div>
-                                <div class="tco-item">
-                                    <span>Years 2-3</span>
-                                    <span>£27,744-33,984/year</span>
-                                </div>
-                                <div class="tco-item total">
-                                    <span>3-Year Total</span>
-                                    <span>£86,360-110,960</span>
-                                </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Email System Integration</span>
+                                <span class="cost-value">£4,000</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Testing & Deployment</span>
+                                <span class="cost-value">£3,000</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Documentation & Training</span>
+                                <span class="cost-value">£1,000</span>
+                            </div>
+                            <div class="cost-item total">
+                                <span class="cost-label">Total MVP Investment</span>
+                                <span class="cost-value">£18,000</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="cost-option">
-                        <h3>Option 2: Custom Solution Costs (GBP)</h3>
-                        
-                        <div class="cost-section">
-                            <h4>Development Investment</h4>
-                            <div class="cost-items">
-                                <div class="cost-item">
-                                    <span>Phase 1 Core CRM & Data Ingestion</span>
-                                    <span>£15,000-20,000</span>
-                                </div>
-                                <div class="cost-item">
-                                    <span>Phase 2 Segmentation & Email Integration</span>
-                                    <span>£10,000-15,000</span>
-                                </div>
-                                <div class="cost-item">
-                                    <span>Phase 3 Testing & Launch</span>
-                                    <span>£5,000-5,000</span>
-                                </div>
-                                <div class="cost-item total">
-                                    <span>Total Development</span>
-                                    <span>£30,000-40,000</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="cost-section">
-                            <h4>Monthly Operational Costs (Scale-Based)</h4>
-                            <div class="scale-costs">
-                                <div class="scale-tier">
-                                    <h5>Small Scale (5-10 clients)</h5>
-                                    <div class="cost-items">
-                                        <div class="cost-item">
-                                            <span>Supabase Pro</span>
-                                            <span>£20-40</span>
-                                        </div>
-                                        <div class="cost-item">
-                                            <span>Vercel Pro</span>
-                                            <span>£16-30</span>
-                                        </div>
-                                        <div class="cost-item">
-                                            <span>Monitoring & DNS</span>
-                                            <span>£15-30</span>
-                                        </div>
-                                        <div class="cost-item total">
-                                            <span>Total</span>
-                                            <span>£51-100/month</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="scale-tier">
-                                    <h5>Medium Scale (50+ clients)</h5>
-                                    <div class="cost-items">
-                                        <div class="cost-item">
-                                            <span>Supabase</span>
-                                            <span>£80-150</span>
-                                        </div>
-                                        <div class="cost-item">
-                                            <span>Vercel</span>
-                                            <span>£50-100</span>
-                                        </div>
-                                        <div class="cost-item">
-                                            <span>Infrastructure</span>
-                                            <span>£45-75</span>
-                                        </div>
-                                        <div class="cost-item total">
-                                            <span>Total</span>
-                                            <span>£175-325/month</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="scale-tier">
-                                    <h5>Large Scale (500+ clients)</h5>
-                                    <div class="cost-items">
-                                        <div class="cost-item">
-                                            <span>Supabase Team</span>
-                                            <span>£300-600</span>
-                                        </div>
-                                        <div class="cost-item">
-                                            <span>Vercel Enterprise</span>
-                                            <span>£200-400</span>
-                                        </div>
-                                        <div class="cost-item">
-                                            <span>Infrastructure</span>
-                                            <span>£150-300</span>
-                                        </div>
-                                        <div class="cost-item total">
-                                            <span>Total</span>
-                                            <span>£650-1,300/month</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="cost-section">
-                            <h4>3-Year Total Cost of Ownership</h4>
-                            <div class="tco-summary">
-                                <div class="tco-item">
-                                    <span>Year 1</span>
-                                    <span>£40,672-49,600</span>
-                                </div>
-                                <div class="tco-item">
-                                    <span>Years 2-3</span>
-                                    <span>£10,672-19,600/year</span>
-                                </div>
-                                <div class="tco-item total">
-                                    <span>3-Year Total</span>
-                                    <span>£62,016-88,800</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="roi-calculator">
-                    <h3>ROI Calculator</h3>
-                    <div class="calculator-inputs">
-                        <div class="input-group">
-                            <label for="numClients">Number of Retail Partners</label>
-                            <input type="range" id="numClients" min="10" max="500" value="100" step="10">
-                            <span class="value" id="numClientsValue">100</span>
-                        </div>
-                        <div class="input-group">
-                            <label for="avgRevenue">Average Revenue per Partner (£/month)</label>
-                            <input type="range" id="avgRevenue" min="500" max="5000" value="2000" step="100">
-                            <span class="value">£<span id="avgRevenueValue">2000</span></span>
+                    <div class="cost-section">
+                        <h3>Monthly Operating Costs</h3>
+                        <div class="cost-tiers">
+                            <div class="cost-tier">
+                                <h4>Small Scale (1-10 clients)</h4>
+                                <ul>
+                                    <li>Supabase: £20/month</li>
+                                    <li>Vercel: £16/month</li>
+                                    <li>Resend: £20/month</li>
+                                    <li><strong>Total: £56/month</strong></li>
+                                </ul>
+                            </div>
+                            <div class="cost-tier">
+                                <h4>Medium Scale (10-50 clients)</h4>
+                                <ul>
+                                    <li>Supabase: £40/month</li>
+                                    <li>Vercel: £30/month</li>
+                                    <li>Resend: £80/month</li>
+                                    <li><strong>Total: £150/month</strong></li>
+                                </ul>
+                            </div>
+                            <div class="cost-tier">
+                                <h4>Large Scale (50+ clients)</h4>
+                                <ul>
+                                    <li>Supabase: £150/month</li>
+                                    <li>Vercel: £150/month</li>
+                                    <li>Resend: £500/month</li>
+                                    <li><strong>Total: £800/month</strong></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="calculator-results">
-                        <div class="result-card">
-                            <h4>Go High Level</h4>
-                            <div class="result-item">
-                                <span>Monthly Cost</span>
-                                <span id="ghlMonthlyCost">£1,416</span>
+
+                    <div class="future-investment">
+                        <h3>Future Development Phases</h3>
+                        <div class="future-phases">
+                            <div class="future-phase">
+                                <h4>Phase 2: Enhanced Analytics (Months 3-4)</h4>
+                                <ul>
+                                    <li>Advanced segmentation combinations</li>
+                                    <li>Automated workflows</li>
+                                    <li>A/B testing</li>
+                                    <li>ROI tracking</li>
+                                </ul>
+                                <span class="phase-cost">£10,000-15,000</span>
                             </div>
-                            <div class="result-item">
-                                <span>Cost per Partner</span>
-                                <span id="ghlCostPerPartner">£14.16</span>
-                            </div>
-                            <div class="result-item">
-                                <span>3-Year Total</span>
-                                <span id="ghlTotal">£110,960</span>
-                            </div>
-                        </div>
-                        <div class="result-card">
-                            <h4>Custom Solution</h4>
-                            <div class="result-item">
-                                <span>Monthly Cost</span>
-                                <span id="customMonthlyCost">£325</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Cost per Partner</span>
-                                <span id="customCostPerPartner">£3.25</span>
-                            </div>
-                            <div class="result-item">
-                                <span>3-Year Total</span>
-                                <span id="customTotal">£166,700</span>
-                            </div>
-                        </div>
-                        <div class="result-card highlight">
-                            <h4>Savings with Custom</h4>
-                            <div class="result-item">
-                                <span>Monthly Savings</span>
-                                <span id="monthlySavings">£1,091</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Break-even Point</span>
-                                <span id="breakeven">14 months</span>
-                            </div>
-                            <div class="result-item">
-                                <span>3-Year Savings</span>
-                                <span id="totalSavings">-£55,740</span>
+                            <div class="future-phase">
+                                <h4>Phase 3: AI & Expansion (Months 5-6)</h4>
+                                <ul>
+                                    <li>Preference prediction</li>
+                                    <li>Content generation</li>
+                                    <li>Multi-channel (SMS, WhatsApp)</li>
+                                    <li>White-label capabilities</li>
+                                </ul>
+                                <span class="phase-cost">£15,000-20,000</span>
                             </div>
                         </div>
                     </div>
@@ -771,335 +522,50 @@ return &lt;ThemeProvider theme={theme}&gt;...&lt;/ThemeProvider&gt;</pre>
             </div>
         </section>
 
-        <section id="recommendation" class="section">
+        <section id="discussion" class="section">
             <div class="container">
-                <h2 class="section-title">Final Recommendation</h2>
+                <h2 class="section-title">Open Discussion Items</h2>
                 
-                <div class="final-recommendation">
-                    <div class="recommendation-header">
-                        <h3>We Recommend: Custom Supabase/Next.js Solution</h3>
-                        <p class="lead">Based on our comprehensive analysis, the custom solution offers the best long-term value for Kaorium's ambitious growth plans.</p>
-                    </div>
-                    
-                    <div class="recommendation-reasons">
-                        <div class="reason">
-                            <div class="reason-icon">💰</div>
-                            <h4>Long-term Cost Efficiency</h4>
-                            <p>Despite higher initial investment, operational costs are 70-80% lower at scale</p>
-                        </div>
-                        <div class="reason">
-                            <div class="reason-icon">🌸</div>
-                            <h4>Industry-Specific Features</h4>
-                            <p>Complete flexibility to build fragrance-specific functionality</p>
-                        </div>
-                        <div class="reason">
-                            <div class="reason-icon">📈</div>
-                            <h4>Scalability</h4>
-                            <p>Architecture designed for global expansion without linear cost increases</p>
-                        </div>
-                        <div class="reason">
-                            <div class="reason-icon">🔐</div>
-                            <h4>Data Ownership</h4>
-                            <p>Full control over valuable fragrance preference data</p>
-                        </div>
-                        <div class="reason">
-                            <div class="reason-icon">🚀</div>
-                            <h4>Competitive Advantage</h4>
-                            <p>Custom features that differentiate from competitors</p>
-                        </div>
-                    </div>
-                    
-                    <div class="alternative-approach">
-                        <h3>MVP Development Approach</h3>
-                        <p>Simple CRM aligned with KAORIUM's specific requirements:</p>
-                        
-                        <div class="mvp-requirements">
-                            <h4>Core MVP Functionality (6-8 weeks)</h4>
-                            <div class="requirement-sections">
-                                <div class="req-section">
-                                    <h5>0. Authentication System</h5>
-                                    <ul>
-                                        <li>Email and password authentication for each client</li>
-                                        <li>Dedicated interface per authenticated client</li>
-                                        <li>Secure multi-tenant data isolation</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="req-section">
-                                    <h5>Data Segmentation Features</h5>
-                                    <ul>
-                                        <li><strong>1. By Date/Period:</strong> Extract emails registered within specific date ranges</li>
-                                        <li><strong>2. By 'Most Liked' Fragrance:</strong> Extract emails for users who selected a specific fragrance as most liked</li>
-                                        <li><strong>3. By 'Liked' Fragrance:</strong> Extract emails for users who included a specific fragrance in their top 3</li>
-                                        <li><strong>4. By Selected Word:</strong> Extract emails for users who selected specific descriptive words</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="req-section">
-                                    <h5>5. Email Interface</h5>
-                                    <ul>
-                                        <li>Email composition interface</li>
-                                        <li>Clickable hyperlinks in message body</li>
-                                        <li>Schedule sending time functionality</li>
-                                        <li>Send to segmented lists (from features 1-4)</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="req-section">
-                                    <h5>Data Integration</h5>
-                                    <ul>
-                                        <li>Integration with Japanese server database</li>
-                                        <li>GDPR-compliant data handling</li>
-                                        <li>Option to run CRM in UK environment</li>
-                                        <li>Coordination with Japanese engineering team</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="phase-cost">MVP Investment: £15,000-20,000</div>
-                        </div>
-                        
-                        <div class="open-discussion">
-                            <h4>Open Discussion Items</h4>
-                            <div class="discussion-items">
-                                <div class="discussion-item">
-                                    <h5>1. Email Interface Details</h5>
-                                    <ul>
-                                        <li>Scope of UI/UX design</li>
-                                        <li>Template management system</li>
-                                        <li>Email preview functionality</li>
-                                        <li>Rich text editing tools</li>
-                                        <li>Integration with Resend/Loops for delivery</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="discussion-item">
-                                    <h5>2. Data Connection Architecture</h5>
-                                    <ul>
-                                        <li>Integration approach with Japan-side database</li>
-                                        <li>Data pull vs. push methodology</li>
-                                        <li>Real-time vs. periodic synchronisation</li>
-                                        <li>Data volume and performance considerations</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="discussion-item">
-                                    <h5>3. Additional MVP Essentials</h5>
-                                    <ul>
-                                        <li>Basic analytics dashboard</li>
-                                        <li>Email delivery tracking</li>
-                                        <li>User activity logging</li>
-                                        <li>Data export functionality</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="future-phases">
-                            <h4>Future Development Phases</h4>
-                            <div class="mvp-roadmap">
-                                <div class="mvp-phase">
-                                    <h4>Phase 2 (Month 3-4)</h4>
-                                    <ul>
-                                        <li>Advanced segmentation combinations</li>
-                                        <li>Automated email workflows</li>
-                                        <li>A/B testing capabilities</li>
-                                        <li>Enhanced analytics</li>
-                                    </ul>
-                                    <div class="phase-cost">Investment: £10,000-15,000</div>
-                                </div>
-                                <div class="mvp-phase">
-                                    <h4>Phase 3 (Month 5-6)</h4>
-                                    <ul>
-                                        <li>White-label capabilities for partners</li>
-                                        <li>AI-powered recommendations</li>
-                                        <li>Multi-channel campaigns</li>
-                                        <li>API for external integrations</li>
-                                    </ul>
-                                    <div class="phase-cost">Investment: £5,000-10,000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-stack-section">
-                        <h3>Recommended Tech Stack for MVP</h3>
-                        <p>Tools selected specifically for KAORIUM's requirements - simple segmentation, multi-tenant auth, and Japanese data integration:</p>
-                        <div class="tech-categories">
-                            <div class="tech-category">
-                                <h4>Core Framework</h4>
-                                <div class="tech-items">
-                                    <div class="tech-item">
-                                        <strong>Next.js 14</strong>
-                                        <span>React framework with App Router</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>TypeScript</strong>
-                                        <span>Type safety across the stack</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>Tailwind CSS</strong>
-                                        <span>Utility-first styling</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>shadcn/ui</strong>
-                                        <span>Beautiful, accessible components</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tech-category">
-                                <h4>Backend & Database</h4>
-                                <div class="tech-items">
-                                    <div class="tech-item">
-                                        <strong>Supabase</strong>
-                                        <span>PostgreSQL with real-time, auth, storage</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>Prisma</strong>
-                                        <span>Type-safe database ORM</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>Edge Functions</strong>
-                                        <span>Serverless API endpoints</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tech-category">
-                                <h4>Email & Marketing</h4>
-                                <div class="tech-items">
-                                    <div class="tech-item">
-                                        <strong>Resend</strong>
-                                        <span>Transactional emails with great DX</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>Loops</strong>
-                                        <span>Marketing automation & campaigns</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>React Email</strong>
-                                        <span>Component-based email templates</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tech-category">
-                                <h4>DevOps & Monitoring</h4>
-                                <div class="tech-items">
-                                    <div class="tech-item">
-                                        <strong>Vercel</strong>
-                                        <span>Deployment & global CDN</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>PostHog</strong>
-                                        <span>Product analytics & monitoring</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>Sentry</strong>
-                                        <span>Error tracking & performance</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>GitHub Actions</strong>
-                                        <span>CI/CD pipeline</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tech-category">
-                                <h4>Additional Tools</h4>
-                                <div class="tech-items">
-                                    <div class="tech-item">
-                                        <strong>Zustand</strong>
-                                        <span>Lightweight state management</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>React Hook Form + Zod</strong>
-                                        <span>Type-safe form validation</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>TanStack Query</strong>
-                                        <span>Data fetching & caching</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <strong>Recharts</strong>
-                                        <span>Data visualisation</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tech-benefits">
-                            <h4>Why This Stack for KAORIUM?</h4>
+                <div class="discussion-grid">
+                    <div class="discussion-card">
+                        <h3>1. Email Interface Scope</h3>
+                        <div class="discussion-content">
+                            <h4>To be determined:</h4>
                             <ul>
-                                <li><strong>Multi-tenant Auth:</strong> Supabase provides built-in email/password auth with RLS for client isolation</li>
-                                <li><strong>Japanese Data Integration:</strong> Prisma supports multiple databases for seamless Japan server connection</li>
-                                <li><strong>Segmentation Performance:</strong> PostgreSQL excels at complex queries for fragrance/word filtering</li>
-                                <li><strong>Email Scheduling:</strong> Resend/Loops provide reliable scheduled sending with tracking</li>
-                                <li><strong>GDPR Compliance:</strong> Built-in data protection features and audit logging</li>
-                                <li><strong>Quick MVP Delivery:</strong> Pre-built components enable 6-8 week timeline</li>
+                                <li>Level of template management needed</li>
+                                <li>Email design tools vs HTML editor</li>
+                                <li>Preview functionality requirements</li>
+                                <li>Personalisation tokens needed</li>
                             </ul>
+                            <p class="recommendation">We recommend starting with a simple rich text editor and pre-built templates, expanding based on usage.</p>
                         </div>
-                        
-                        <div class="data-structure">
-                            <h4>Data Structure & Storage</h4>
-                            <div class="data-details">
-                                <div class="data-section">
-                                    <h5>Captured User Data</h5>
-                                    <ul>
-                                        <li>Date and time of KAORIUM interaction</li>
-                                        <li>User email address</li>
-                                        <li>3 'liked' fragrance products</li>
-                                        <li>1 'most liked' fragrance product</li>
-                                        <li>3 descriptive words per product</li>
-                                    </ul>
-                                </div>
-                                <div class="data-section">
-                                    <h5>Storage Architecture</h5>
-                                    <ul>
-                                        <li>Primary data remains in Japanese server</li>
-                                        <li>UK CRM maintains sync'd subset for performance</li>
-                                        <li>Indexed for fast segmentation queries</li>
-                                        <li>Encrypted at rest and in transit</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+
+                    <div class="discussion-card">
+                        <h3>2. Data Integration Method</h3>
+                        <div class="discussion-content">
+                            <h4>Options to discuss:</h4>
+                            <ul>
+                                <li>API vs direct database connection</li>
+                                <li>Sync frequency (real-time vs periodic)</li>
+                                <li>Data volume expectations</li>
+                                <li>Backup and recovery approach</li>
+                            </ul>
+                            <p class="recommendation">API integration offers better security and flexibility for MVP.</p>
                         </div>
-                        
-                        <div class="augmentation-possibilities">
-                            <h4>Future Augmentation & Improvements</h4>
-                            <div class="augmentation-grid">
-                                <div class="augmentation-item">
-                                    <h5>🤖 AI-Powered Insights</h5>
-                                    <ul>
-                                        <li>Predict fragrance preferences based on past selections</li>
-                                        <li>Auto-generate email content based on user profiles</li>
-                                        <li>Sentiment analysis of descriptive words</li>
-                                        <li>Optimal send time prediction</li>
-                                    </ul>
-                                </div>
-                                <div class="augmentation-item">
-                                    <h5>📊 Advanced Analytics</h5>
-                                    <ul>
-                                        <li>Fragrance trend analysis over time</li>
-                                        <li>Word cloud visualisations</li>
-                                        <li>Cohort analysis by preferences</li>
-                                        <li>Campaign ROI tracking</li>
-                                    </ul>
-                                </div>
-                                <div class="augmentation-item">
-                                    <h5>🔄 Integration Expansions</h5>
-                                    <ul>
-                                        <li>POS system integration for purchase tracking</li>
-                                        <li>Social media campaign coordination</li>
-                                        <li>SMS and WhatsApp messaging</li>
-                                        <li>Loyalty program integration</li>
-                                    </ul>
-                                </div>
-                                <div class="augmentation-item">
-                                    <h5>🎯 Enhanced Segmentation</h5>
-                                    <ul>
-                                        <li>Combination filters (AND/OR logic)</li>
-                                        <li>Behavioural segmentation</li>
-                                        <li>Predictive segments</li>
-                                        <li>Dynamic segment updates</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+
+                    <div class="discussion-card">
+                        <h3>3. Additional MVP Features</h3>
+                        <div class="discussion-content">
+                            <h4>Suggested additions:</h4>
+                            <ul>
+                                <li>Basic analytics dashboard</li>
+                                <li>Email open/click tracking</li>
+                                <li>User activity audit log</li>
+                                <li>CSV export functionality</li>
+                            </ul>
+                            <p class="recommendation">These can be included in MVP or deferred to Phase 2 based on priority.</p>
                         </div>
                     </div>
                 </div>
@@ -1110,51 +576,50 @@ return &lt;ThemeProvider theme={theme}&gt;...&lt;/ThemeProvider&gt;</pre>
             <div class="container">
                 <h2 class="section-title">Next Steps</h2>
                 
-                <div class="steps-timeline">
+                <div class="next-steps-timeline">
                     <div class="step">
-                        <div class="step-header">
-                            <span class="step-time">Week 1-2</span>
-                            <h4>Immediate Actions</h4>
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <h4>Review & Approval</h4>
+                            <p>Review this SOW and provide feedback on approach and requirements</p>
+                            <span class="step-timeline">This week</span>
                         </div>
-                        <ul>
-                            <li>Finalize platform decision based on business priorities</li>
-                            <li>Establish project governance structure</li>
-                            <li>Allocate budget and resources</li>
-                            <li>Begin vendor selection process</li>
-                        </ul>
                     </div>
+                    
                     <div class="step">
-                        <div class="step-header">
-                            <span class="step-time">Week 3-4</span>
-                            <h4>Pre-Implementation</h4>
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <h4>Technical Workshop</h4>
+                            <p>Meet with Japanese engineering team to finalise integration approach</p>
+                            <span class="step-timeline">Week 2</span>
                         </div>
-                        <ul>
-                            <li>Detailed requirements workshop with stakeholders</li>
-                            <li>Technical architecture review</li>
-                            <li>Security and compliance assessment</li>
-                            <li>Development team assembly (if custom)</li>
-                        </ul>
                     </div>
+                    
                     <div class="step">
-                        <div class="step-header">
-                            <span class="step-time">Month 2</span>
-                            <h4>Implementation Kickoff</h4>
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <h4>Contract & Kickoff</h4>
+                            <p>Sign agreement and begin development sprint</p>
+                            <span class="step-timeline">Week 2</span>
                         </div>
-                        <ul>
-                            <li>Project initiation meeting</li>
-                            <li>Development environment setup</li>
-                            <li>Sprint planning and timeline confirmation</li>
-                            <li>Communication plan activation</li>
-                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <h4>Weekly Progress Updates</h4>
+                            <p>Regular demos and feedback sessions throughout development</p>
+                            <span class="step-timeline">Weeks 3-10</span>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="cta-section">
-                    <h3>Ready to Transform Your Fragrance Business?</h3>
-                    <p>Let's build a CRM that matches the innovation of your AI-powered fragrance technology.</p>
-                    <div class="cta-buttons">
-                        <button class="btn btn-primary" id="scheduleCall">Schedule a Consultation</button>
-                        <button class="btn btn-secondary" id="downloadPDF">Download Full SOW</button>
+
+                <div class="contact-section">
+                    <h3>Ready to proceed?</h3>
+                    <p>Let's build a CRM that perfectly fits KAORIUM's unique fragrance business needs.</p>
+                    <div class="contact-details">
+                        <p>Contact: Boostkit Team</p>
+                        <p>Valid until: 14 September 2025</p>
                     </div>
                 </div>
             </div>
@@ -1164,14 +629,8 @@ return &lt;ThemeProvider theme={theme}&gt;...&lt;/ThemeProvider&gt;</pre>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <p>Prepared by: Boostkit</p>
-                    <p>Date: 14 July 2025</p>
-                    <p>Valid Until: 14 September 2025</p>
-                </div>
-                <div class="footer-note">
-                    <p>This Statement of Work is subject to the terms and conditions of the Master Services Agreement between Kaorium Ltd. and Boostkit.</p>
-                </div>
+                <p>© 2025 Boostkit. This proposal is confidential and proprietary.</p>
+                <p>Statement of Work for Kaorium Ltd. - Simple CRM MVP Development</p>
             </div>
         </div>
     </footer>
