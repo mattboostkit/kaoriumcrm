@@ -383,41 +383,41 @@ return &lt;ThemeProvider theme={theme}&gt;...&lt;/ThemeProvider&gt;</pre>
                             <div class="timeline-phases">
                                 <div class="phase">
                                     <div class="phase-header">
-                                        <span class="phase-title">Phase 1: Core CRM Development</span>
-                                        <span class="phase-duration">Months 1-2</span>
+                                        <span class="phase-title">Phase 1: MVP Core (Weeks 1-4)</span>
+                                        <span class="phase-duration">4 weeks</span>
                                     </div>
                                     <ul class="phase-tasks">
-                                        <li>Database schema for customer and fragrance data</li>
-                                        <li>Data ingestion pipeline from KAORIUM hardware</li>
-                                        <li>Basic CRM interface and contact management</li>
-                                        <li>User authentication and permissions</li>
-                                        <li>Resend/Loops email platform integration</li>
+                                        <li>Multi-tenant authentication system</li>
+                                        <li>Database schema for fragrance preference data</li>
+                                        <li>Integration with Japanese server</li>
+                                        <li>Basic segmentation queries (date, fragrance, words)</li>
+                                        <li>Simple email composition interface</li>
                                     </ul>
                                 </div>
                                 <div class="phase">
                                     <div class="phase-header">
-                                        <span class="phase-title">Phase 2: Segmentation & Automation</span>
-                                        <span class="phase-duration">Month 3</span>
+                                        <span class="phase-title">Phase 2: Email & UI (Weeks 5-6)</span>
+                                        <span class="phase-duration">2 weeks</span>
                                     </div>
                                     <ul class="phase-tasks">
-                                        <li>Advanced audience segmentation based on fragrance preferences</li>
-                                        <li>Email campaign automation workflows</li>
-                                        <li>Basic analytics and reporting dashboard</li>
-                                        <li>White-label customisation for partners</li>
-                                        <li>Mobile-responsive optimisation</li>
+                                        <li>Resend/Loops integration for email delivery</li>
+                                        <li>Email scheduling functionality</li>
+                                        <li>Client-specific UI customisation</li>
+                                        <li>Segmentation results preview</li>
+                                        <li>Basic activity logging</li>
                                     </ul>
                                 </div>
                                 <div class="phase">
                                     <div class="phase-header">
-                                        <span class="phase-title">Phase 3: Testing & Launch</span>
-                                        <span class="phase-duration">Month 4</span>
+                                        <span class="phase-title">Phase 3: Testing & Launch (Weeks 7-8)</span>
+                                        <span class="phase-duration">2 weeks</span>
                                     </div>
                                     <ul class="phase-tasks">
-                                        <li>End-to-end testing of all features</li>
-                                        <li>Performance optimisation</li>
-                                        <li>Security review</li>
-                                        <li>Partner training materials</li>
-                                        <li>Staged rollout to initial partners</li>
+                                        <li>Integration testing with Japan server</li>
+                                        <li>Multi-tenant security testing</li>
+                                        <li>Email delivery testing</li>
+                                        <li>Client training and documentation</li>
+                                        <li>Production deployment</li>
                                     </ul>
                                 </div>
                             </div>
@@ -810,46 +810,120 @@ return &lt;ThemeProvider theme={theme}&gt;...&lt;/ThemeProvider&gt;</pre>
                     </div>
                     
                     <div class="alternative-approach">
-                        <h3>MVP-First Approach: Get to Market Faster</h3>
-                        <p>Launch a focused MVP in just 6-8 weeks, then continuously improve based on real user feedback:</p>
-                        <div class="mvp-roadmap">
-                            <div class="mvp-phase">
-                                <h4>MVP Launch (6-8 weeks)</h4>
-                                <ul>
-                                    <li>Core CRM functionality with contact management</li>
-                                    <li>KAORIUM hardware data ingestion</li>
-                                    <li>Basic audience segmentation</li>
-                                    <li>Email campaign sending via Resend/Loops</li>
-                                    <li>Simple analytics dashboard</li>
-                                </ul>
-                                <div class="phase-cost">Investment: £12,000-18,000</div>
+                        <h3>MVP Development Approach</h3>
+                        <p>Simple CRM aligned with KAORIUM's specific requirements:</p>
+                        
+                        <div class="mvp-requirements">
+                            <h4>Core MVP Functionality (6-8 weeks)</h4>
+                            <div class="requirement-sections">
+                                <div class="req-section">
+                                    <h5>0. Authentication System</h5>
+                                    <ul>
+                                        <li>Email and password authentication for each client</li>
+                                        <li>Dedicated interface per authenticated client</li>
+                                        <li>Secure multi-tenant data isolation</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="req-section">
+                                    <h5>Data Segmentation Features</h5>
+                                    <ul>
+                                        <li><strong>1. By Date/Period:</strong> Extract emails registered within specific date ranges</li>
+                                        <li><strong>2. By 'Most Liked' Fragrance:</strong> Extract emails for users who selected a specific fragrance as most liked</li>
+                                        <li><strong>3. By 'Liked' Fragrance:</strong> Extract emails for users who included a specific fragrance in their top 3</li>
+                                        <li><strong>4. By Selected Word:</strong> Extract emails for users who selected specific descriptive words</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="req-section">
+                                    <h5>5. Email Interface</h5>
+                                    <ul>
+                                        <li>Email composition interface</li>
+                                        <li>Clickable hyperlinks in message body</li>
+                                        <li>Schedule sending time functionality</li>
+                                        <li>Send to segmented lists (from features 1-4)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="req-section">
+                                    <h5>Data Integration</h5>
+                                    <ul>
+                                        <li>Integration with Japanese server database</li>
+                                        <li>GDPR-compliant data handling</li>
+                                        <li>Option to run CRM in UK environment</li>
+                                        <li>Coordination with Japanese engineering team</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="mvp-phase">
-                                <h4>Phase 2 (Month 3-4)</h4>
-                                <ul>
-                                    <li>Advanced segmentation rules</li>
-                                    <li>Automated email workflows</li>
-                                    <li>White-label customisation</li>
-                                    <li>Enhanced reporting</li>
-                                </ul>
-                                <div class="phase-cost">Investment: £8,000-12,000</div>
+                            <div class="phase-cost">MVP Investment: £15,000-20,000</div>
+                        </div>
+                        
+                        <div class="open-discussion">
+                            <h4>Open Discussion Items</h4>
+                            <div class="discussion-items">
+                                <div class="discussion-item">
+                                    <h5>1. Email Interface Details</h5>
+                                    <ul>
+                                        <li>Scope of UI/UX design</li>
+                                        <li>Template management system</li>
+                                        <li>Email preview functionality</li>
+                                        <li>Rich text editing tools</li>
+                                        <li>Integration with Resend/Loops for delivery</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="discussion-item">
+                                    <h5>2. Data Connection Architecture</h5>
+                                    <ul>
+                                        <li>Integration approach with Japan-side database</li>
+                                        <li>Data pull vs. push methodology</li>
+                                        <li>Real-time vs. periodic synchronisation</li>
+                                        <li>Data volume and performance considerations</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="discussion-item">
+                                    <h5>3. Additional MVP Essentials</h5>
+                                    <ul>
+                                        <li>Basic analytics dashboard</li>
+                                        <li>Email delivery tracking</li>
+                                        <li>User activity logging</li>
+                                        <li>Data export functionality</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="mvp-phase">
-                                <h4>Phase 3 (Month 5-6)</h4>
-                                <ul>
-                                    <li>AI-powered recommendations</li>
-                                    <li>Multi-channel campaigns</li>
-                                    <li>Advanced analytics</li>
-                                    <li>API for partner integrations</li>
-                                </ul>
-                                <div class="phase-cost">Investment: £5,000-8,000</div>
+                        </div>
+                        
+                        <div class="future-phases">
+                            <h4>Future Development Phases</h4>
+                            <div class="mvp-roadmap">
+                                <div class="mvp-phase">
+                                    <h4>Phase 2 (Month 3-4)</h4>
+                                    <ul>
+                                        <li>Advanced segmentation combinations</li>
+                                        <li>Automated email workflows</li>
+                                        <li>A/B testing capabilities</li>
+                                        <li>Enhanced analytics</li>
+                                    </ul>
+                                    <div class="phase-cost">Investment: £10,000-15,000</div>
+                                </div>
+                                <div class="mvp-phase">
+                                    <h4>Phase 3 (Month 5-6)</h4>
+                                    <ul>
+                                        <li>White-label capabilities for partners</li>
+                                        <li>AI-powered recommendations</li>
+                                        <li>Multi-channel campaigns</li>
+                                        <li>API for external integrations</li>
+                                    </ul>
+                                    <div class="phase-cost">Investment: £5,000-10,000</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="tech-stack-section">
-                        <h3>Recommended Tech Stack</h3>
-                        <p>A modern, scalable architecture built with best-in-class tools:</p>
+                        <h3>Recommended Tech Stack for MVP</h3>
+                        <p>Tools selected specifically for KAORIUM's requirements - simple segmentation, multi-tenant auth, and Japanese data integration:</p>
                         <div class="tech-categories">
                             <div class="tech-category">
                                 <h4>Core Framework</h4>
@@ -950,15 +1024,82 @@ return &lt;ThemeProvider theme={theme}&gt;...&lt;/ThemeProvider&gt;</pre>
                             </div>
                         </div>
                         <div class="tech-benefits">
-                            <h4>Why This Stack?</h4>
+                            <h4>Why This Stack for KAORIUM?</h4>
                             <ul>
-                                <li><strong>Rapid Development:</strong> Pre-built components and authentication accelerate MVP delivery</li>
-                                <li><strong>Type Safety:</strong> TypeScript + Prisma ensures consistency across the entire stack</li>
-                                <li><strong>Scalability:</strong> Serverless architecture scales automatically with demand</li>
-                                <li><strong>Developer Experience:</strong> Modern tooling with hot reload, type hints, and AI assistance</li>
-                                <li><strong>Cost-Effective:</strong> Generous free tiers and pay-as-you-grow pricing</li>
-                                <li><strong>Real-time Updates:</strong> Built-in WebSocket support for live data synchronisation</li>
+                                <li><strong>Multi-tenant Auth:</strong> Supabase provides built-in email/password auth with RLS for client isolation</li>
+                                <li><strong>Japanese Data Integration:</strong> Prisma supports multiple databases for seamless Japan server connection</li>
+                                <li><strong>Segmentation Performance:</strong> PostgreSQL excels at complex queries for fragrance/word filtering</li>
+                                <li><strong>Email Scheduling:</strong> Resend/Loops provide reliable scheduled sending with tracking</li>
+                                <li><strong>GDPR Compliance:</strong> Built-in data protection features and audit logging</li>
+                                <li><strong>Quick MVP Delivery:</strong> Pre-built components enable 6-8 week timeline</li>
                             </ul>
+                        </div>
+                        
+                        <div class="data-structure">
+                            <h4>Data Structure & Storage</h4>
+                            <div class="data-details">
+                                <div class="data-section">
+                                    <h5>Captured User Data</h5>
+                                    <ul>
+                                        <li>Date and time of KAORIUM interaction</li>
+                                        <li>User email address</li>
+                                        <li>3 'liked' fragrance products</li>
+                                        <li>1 'most liked' fragrance product</li>
+                                        <li>3 descriptive words per product</li>
+                                    </ul>
+                                </div>
+                                <div class="data-section">
+                                    <h5>Storage Architecture</h5>
+                                    <ul>
+                                        <li>Primary data remains in Japanese server</li>
+                                        <li>UK CRM maintains sync'd subset for performance</li>
+                                        <li>Indexed for fast segmentation queries</li>
+                                        <li>Encrypted at rest and in transit</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="augmentation-possibilities">
+                            <h4>Future Augmentation & Improvements</h4>
+                            <div class="augmentation-grid">
+                                <div class="augmentation-item">
+                                    <h5>🤖 AI-Powered Insights</h5>
+                                    <ul>
+                                        <li>Predict fragrance preferences based on past selections</li>
+                                        <li>Auto-generate email content based on user profiles</li>
+                                        <li>Sentiment analysis of descriptive words</li>
+                                        <li>Optimal send time prediction</li>
+                                    </ul>
+                                </div>
+                                <div class="augmentation-item">
+                                    <h5>📊 Advanced Analytics</h5>
+                                    <ul>
+                                        <li>Fragrance trend analysis over time</li>
+                                        <li>Word cloud visualisations</li>
+                                        <li>Cohort analysis by preferences</li>
+                                        <li>Campaign ROI tracking</li>
+                                    </ul>
+                                </div>
+                                <div class="augmentation-item">
+                                    <h5>🔄 Integration Expansions</h5>
+                                    <ul>
+                                        <li>POS system integration for purchase tracking</li>
+                                        <li>Social media campaign coordination</li>
+                                        <li>SMS and WhatsApp messaging</li>
+                                        <li>Loyalty program integration</li>
+                                    </ul>
+                                </div>
+                                <div class="augmentation-item">
+                                    <h5>🎯 Enhanced Segmentation</h5>
+                                    <ul>
+                                        <li>Combination filters (AND/OR logic)</li>
+                                        <li>Behavioural segmentation</li>
+                                        <li>Predictive segments</li>
+                                        <li>Dynamic segment updates</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

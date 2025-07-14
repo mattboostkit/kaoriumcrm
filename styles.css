@@ -786,12 +786,105 @@ body {
     color: var(--text-muted);
 }
 
+/* MVP Requirements */
+.mvp-requirements {
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.mvp-requirements h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.requirement-sections {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.req-section {
+    background: var(--surface);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary);
+}
+
+.req-section h5 {
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.req-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.req-section li {
+    padding: 0.5rem 0;
+    color: var(--text-muted);
+}
+
+/* Open Discussion */
+.open-discussion {
+    background: var(--surface);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.open-discussion h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.discussion-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.discussion-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.discussion-item h5 {
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.discussion-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.discussion-item li {
+    padding: 0.25rem 0;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* Future Phases */
+.future-phases {
+    margin-top: 2rem;
+}
+
+.future-phases h4 {
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
 /* MVP Roadmap */
 .mvp-roadmap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .mvp-phase {
@@ -919,6 +1012,100 @@ body {
 
 .tech-benefits li:last-child {
     border-bottom: none;
+}
+
+/* Data Structure Section */
+.data-structure {
+    background: var(--surface);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.data-structure h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.data-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.data-section {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.data-section h5 {
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.data-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.data-section li {
+    padding: 0.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* Augmentation Possibilities */
+.augmentation-possibilities {
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.augmentation-possibilities h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.augmentation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.augmentation-item {
+    background: var(--surface);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.augmentation-item h5 {
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.augmentation-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.augmentation-item li {
+    padding: 0.25rem 0;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.augmentation-item li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
 }
 
 /* Next Steps */
