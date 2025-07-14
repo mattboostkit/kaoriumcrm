@@ -2,9 +2,11 @@
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.querySelector('.nav-menu');
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -49,6 +51,7 @@ window.addEventListener('scroll', () => {
 
 // Add animation delays to elements
 document.addEventListener('DOMContentLoaded', () => {
+    // Animate sections
     const sections = document.querySelectorAll('.section');
     sections.forEach((section, index) => {
         section.style.animationDelay = `${index * 0.1}s`;
@@ -70,21 +73,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
     
     // Observe requirement cards
-    document.querySelectorAll('.requirement-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
-    });
+    const requirementCards = document.querySelectorAll('.requirement-card');
+    if (requirementCards.length > 0) {
+        requirementCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            card.style.transitionDelay = `${index * 0.05}s`;
+            observer.observe(card);
+        });
+    }
     
     // Observe phase cards
-    document.querySelectorAll('.phase-card').forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        card.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(card);
-    });
+    const phaseCards = document.querySelectorAll('.phase-card');
+    if (phaseCards.length > 0) {
+        phaseCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            card.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+    }
 });
 
 // Print functionality
