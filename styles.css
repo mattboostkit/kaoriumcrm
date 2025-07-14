@@ -180,6 +180,10 @@ body {
     transition: all 0.3s;
 }
 
+.option-card[data-option="ghl"] h3 {
+    color: var(--secondary);
+}
+
 .option-card:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-2px);
@@ -388,6 +392,67 @@ body {
     color: var(--primary);
     font-weight: 600;
     margin: 1rem 0;
+}
+
+/* White-Label Architecture */
+.white-label-architecture {
+    margin: 2rem 0;
+    background: var(--surface);
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.white-label-architecture h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.architecture-details {
+    display: grid;
+    gap: 2rem;
+}
+
+.architecture-section {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.architecture-section h5 {
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.architecture-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.architecture-section li {
+    padding: 0.5rem 0;
+    color: var(--text-muted);
+}
+
+.architecture-section strong {
+    color: var(--text);
+}
+
+.code-example {
+    margin-top: 1rem;
+    background: #f6f8fa;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.code-example pre {
+    padding: 1rem;
+    margin: 0;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-family: 'Consolas', 'Monaco', monospace;
 }
 
 /* Timeline */

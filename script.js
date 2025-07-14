@@ -93,8 +93,8 @@ function updateCalculator() {
     document.getElementById('customCostPerPartner').textContent = `£${customCostPerPartner}`;
     
     // 3-Year totals
-    const ghlSetup = 26000;
-    const customSetup = 35000;
+    const ghlSetup = 5000;
+    const customSetup = 40000;
     
     const ghl3Year = ghlSetup + (ghlMonthlyCost * 36);
     const custom3Year = customSetup + (customMonthlyCost * 36) + 15000; // Including maintenance

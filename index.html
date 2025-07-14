@@ -48,7 +48,7 @@
             <div class="container">
                 <h2 class="section-title">Executive Summary</h2>
                 <div class="summary-content">
-                    <p class="lead">This Statement of Work outlines two implementation approaches for Kaorium's white-label CRM solution designed specifically for the fragrance industry. As "The Scent Sommelier" expanding from 400+ successful deployments in Japan to the UK and European markets, Kaorium requires a sophisticated CRM system that can manage B2B relationships with fragrance retailers while capturing and analyzing consumer scent preference data.</p>
+                    <p class="lead">This Statement of Work outlines two implementation approaches for Kaorium's white-label CRM solution designed specifically for the fragrance industry. As "The Scent Sommelier" expanding from 400+ successful deployments in Japan to the UK and European markets, Kaorium requires a sophisticated CRM system that can manage B2B relationships with fragrance retailers while capturing and analysing consumer scent preference data.</p>
                     
                     <div class="options-grid">
                         <div class="option-card" data-option="ghl">
@@ -249,8 +249,8 @@
                                     </div>
                                     <ul class="phase-tasks">
                                         <li>KAORIUM hardware API connection</li>
-                                        <li>Epson printing integration</li>
-                                        <li>Data migration planning</li>
+                                        <li>Data import from existing systems</li>
+                                        <li>Integration testing</li>
                                         <li>Testing and refinement</li>
                                     </ul>
                                 </div>
@@ -325,6 +325,54 @@
                                         <span>Edge Network</span>
                                         <span>Serverless Functions</span>
                                         <span>Custom Domains</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="white-label-architecture">
+                            <h4>White-Label & Multi-Tenant Architecture</h4>
+                            <div class="architecture-details">
+                                <div class="architecture-section">
+                                    <h5>Authentication & Access Control</h5>
+                                    <ul>
+                                        <li><strong>Email & Password Authentication:</strong> Each retail partner's users log in with email/password via Supabase Auth</li>
+                                        <li><strong>Tenant Isolation:</strong> Row-Level Security (RLS) ensures complete data separation between partners</li>
+                                        <li><strong>Custom Login Pages:</strong> Each partner gets their own branded login URL (e.g., partner1.kaoriumcrm.com)</li>
+                                        <li><strong>Role-Based Access:</strong> Admin, Manager, and User roles with granular permissions per tenant</li>
+                                    </ul>
+                                </div>
+                                <div class="architecture-section">
+                                    <h5>White-Label Capabilities</h5>
+                                    <ul>
+                                        <li><strong>Custom Domains:</strong> Each partner can use their own domain (e.g., crm.partner.com)</li>
+                                        <li><strong>Dynamic Theming:</strong> Logo, colours, fonts stored per tenant and applied at runtime</li>
+                                        <li><strong>Email Branding:</strong> Automated emails use partner's branding and from address</li>
+                                        <li><strong>Dedicated Dashboards:</strong> Each partner sees only their data and custom KPIs</li>
+                                    </ul>
+                                </div>
+                                <div class="architecture-section">
+                                    <h5>Selling to Other Companies</h5>
+                                    <ul>
+                                        <li><strong>SaaS Model:</strong> Monthly subscription per retail partner based on contacts/features</li>
+                                        <li><strong>Self-Service Onboarding:</strong> New partners can sign up and configure their instance</li>
+                                        <li><strong>Automated Provisioning:</strong> New tenant setup in minutes with default configuration</li>
+                                        <li><strong>Revenue Sharing:</strong> Optional model where partners pay based on campaign performance</li>
+                                    </ul>
+                                </div>
+                                <div class="architecture-section">
+                                    <h5>Technical Implementation</h5>
+                                    <div class="code-example">
+                                        <pre>// Tenant identification from subdomain
+const tenant = extractTenant(request.headers.host)
+
+// Supabase RLS policy example
+CREATE POLICY "tenant_isolation" ON contacts
+FOR ALL USING (tenant_id = current_setting('app.tenant_id'))
+
+// Dynamic theming
+const theme = await getThemeForTenant(tenantId)
+return &lt;ThemeProvider theme={theme}&gt;...&lt;/ThemeProvider&gt;</pre>
                                     </div>
                                 </div>
                             </div>
@@ -476,19 +524,19 @@
                             <div class="cost-items">
                                 <div class="cost-item">
                                     <span>Professional Services</span>
-                                    <span>£5,000-8,000</span>
+                                    <span>£2,000</span>
                                 </div>
                                 <div class="cost-item">
-                                    <span>Custom Integration Development</span>
-                                    <span>£10,000-15,000</span>
+                                    <span>Basic Setup & Configuration</span>
+                                    <span>£2,000</span>
                                 </div>
                                 <div class="cost-item">
                                     <span>Training & Documentation</span>
-                                    <span>£2,000-3,000</span>
+                                    <span>£1,000</span>
                                 </div>
                                 <div class="cost-item total">
                                     <span>Total Setup</span>
-                                    <span>£17,000-26,000</span>
+                                    <span>£5,000</span>
                                 </div>
                             </div>
                         </div>
@@ -549,24 +597,20 @@
                             <h4>Development Investment</h4>
                             <div class="cost-items">
                                 <div class="cost-item">
-                                    <span>Phase 1 MVP</span>
-                                    <span>£40,000-50,000</span>
+                                    <span>Phase 1 Core CRM & Data Ingestion</span>
+                                    <span>£15,000-20,000</span>
                                 </div>
                                 <div class="cost-item">
-                                    <span>Phase 2 Advanced Features</span>
-                                    <span>£20,000-30,000</span>
-                                </div>
-                                <div class="cost-item">
-                                    <span>Phase 3 Testing & Refinement</span>
+                                    <span>Phase 2 Segmentation & Email Integration</span>
                                     <span>£10,000-15,000</span>
                                 </div>
                                 <div class="cost-item">
-                                    <span>Phase 4 Launch Support</span>
-                                    <span>£5,000-10,000</span>
+                                    <span>Phase 3 Testing & Launch</span>
+                                    <span>£5,000-5,000</span>
                                 </div>
                                 <div class="cost-item total">
                                     <span>Total Development</span>
-                                    <span>£75,000-105,000</span>
+                                    <span>£30,000-40,000</span>
                                 </div>
                             </div>
                         </div>
@@ -647,15 +691,15 @@
                             <div class="tco-summary">
                                 <div class="tco-item">
                                     <span>Year 1</span>
-                                    <span>£95,600-132,200</span>
+                                    <span>£40,672-49,600</span>
                                 </div>
                                 <div class="tco-item">
                                     <span>Years 2-3</span>
-                                    <span>£33,600-57,200/year</span>
+                                    <span>£10,672-19,600/year</span>
                                 </div>
                                 <div class="tco-item total">
                                     <span>3-Year Total</span>
-                                    <span>£162,800-246,600</span>
+                                    <span>£62,016-88,800</span>
                                 </div>
                             </div>
                         </div>
@@ -980,12 +1024,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <p>Prepared by: CRM Implementation Consultancy</p>
+                    <p>Prepared by: Boostkit</p>
                     <p>Date: 14 July 2025</p>
                     <p>Valid Until: 14 September 2025</p>
                 </div>
                 <div class="footer-note">
-                    <p>This Statement of Work is subject to the terms and conditions of the Master Services Agreement between Kaorium Ltd. and CRM Implementation Consultancy.</p>
+                    <p>This Statement of Work is subject to the terms and conditions of the Master Services Agreement between Kaorium Ltd. and Boostkit.</p>
                 </div>
             </div>
         </div>
