@@ -1,0 +1,19 @@
+{
+  "name": "kaorium-crm-sow",
+  "version": "1.0.0",
+  "description": "Interactive Statement of Work for Kaorium CRM Implementation",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "echo \"No test specified\""
+  },
+  "keywords": [
+    "crm",
+    "kaorium",
+    "sow",
+    "statement-of-work"
+  ],
+  "author": "CRM Implementation Consultancy",
+  "license": "UNLICENSED",
+  "private": true
+}
